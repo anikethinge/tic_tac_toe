@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(ellipse at top, #0d0d2b, #000010);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 6px;
+  background: linear-gradient(90deg, #00f5ff, #bf00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 16px;
+}
+
+.score-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.timer-box {
+  border-color: #00f5ff;
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
+
+.score-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score-value {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+#timer.danger {
+  color: #ff4757;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+#status {
+  font-size: 1.1rem;
+  color: #a8dadc;
+  letter-spacing: 1px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  gap: 10px;
+}
+
+.cell {
+  background: rgba(255,255,255,0.04);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.cell:hover {
+  background: rgba(0, 245, 255, 0.08);
+  border-color: #00f5ff;
+  box-shadow: 0 0 16px rgba(0,245,255,0.2);
+}
+
+.cell.x {
+  color: #00f5ff;
+  text-shadow: 0 0 12px #00f5ff;
+}
+
+.cell.o {
+  color: #bf00ff;
+  text-shadow: 0 0 12px #bf00ff;
+}
+
+#restart {
+  padding: 12px 36px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00f5ff, #bf00ff);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#restart:hover {
+  opacity: 0.85;
+  transform: scale(1.04);
+}
